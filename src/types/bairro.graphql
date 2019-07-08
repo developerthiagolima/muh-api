@@ -1,0 +1,22 @@
+type Query {
+    listarBairro(nome: String, cidadeid: ID): [Bairro!]!
+}
+
+type Mutation {
+    criarBairro(data: BairroInput!): Bairro!
+    atualizarBairro(id: ID!, data: BairroInput!): Bairro!
+    deletarBairro(id: ID!): String
+}
+
+input BairroInput {
+    nome: String!
+    cidadeid: ID!
+    flativo: String
+}
+
+type Bairro {
+    id: ID!
+    nome: String!
+    cidadeid: Cidade!
+    flativo: String
+}

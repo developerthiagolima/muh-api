@@ -1,0 +1,20 @@
+type Query {
+    listarCidade(nome: String): [Cidade!]!
+}
+
+type Mutation {
+    criarCidade(data: CidadeInput!): Cidade!
+    atualizarCidade(id: ID!, data: CidadeInput!): Cidade!
+    deletarCidade(id: ID!): String
+}
+
+input CidadeInput {
+    nome: String
+    flativo: String
+}
+
+type Cidade {
+    id: ID!
+    nome: String!
+    flativo: String
+}
